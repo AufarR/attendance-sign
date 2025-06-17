@@ -9,13 +9,21 @@ This project uses PlatformIO for building and managing the embedded application.
 
 ## Setup
 
-1.  **Configure BLE Settings**:
-    *   **Device Name**:
-        *   The BLE device name can be configured in `include/ble_config.h`.
-        *   Edit the `BLE_DEVICE_NAME` macro if you want to change the default name ("ESP32-Signer").
-    *   **Service and Characteristic UUIDs**:
-        *   If you need to use specific UUIDs for your BLE service and characteristics, you can configure them in `include/uuid.h`.
-        *   Modify `SERVICE_UUID`, `MESSAGE_CHARACTERISTIC_UUID`, and `SIG_CHARACTERISTIC_UUID` as needed. Example UUIDs are provided.
+1.  **Configure BLE Settings (from examples)**:
+    *   **General BLE Configuration (`ble_config.h`)**:
+        *   This file is for settings like the BLE device name and auto-disconnect timeout.
+        *   First, copy the example configuration file:
+            ```bash
+            cp include/ble_config.h.example include/ble_config.h
+            ```
+        *   Then, edit `include/ble_config.h`. For example, you can customize `BLE_DEVICE_NAME` and `AUTO_DISCONNECT_TIMEOUT_MS`.
+    *   **Service and Characteristic UUIDs (`uuid.h`)**:
+        *   This file defines the UUIDs for the BLE service and its characteristics.
+        *   First, copy the example UUID file:
+            ```bash
+            cp include/uuid.h.example include/uuid.h
+            ```
+        *   Then, edit `include/uuid.h` to set your desired `SERVICE_UUID`, `MESSAGE_CHARACTERISTIC_UUID`, and `SIG_CHARACTERISTIC_UUID`.
 
 2.  **Configure RSA Key**:
     *   Copy the example key file:

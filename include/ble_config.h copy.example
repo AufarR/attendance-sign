@@ -1,0 +1,10 @@
+#ifndef BLE_CONFIG_H
+#define BLE_CONFIG_H
+
+// Define your BLE Device Name
+#define BLE_DEVICE_NAME "Signer"
+
+// Auto-disconnect timeout in milliseconds (e.g., 15 seconds)
+#define AUTO_DISCONNECT_TIMEOUT_MS 15000
+
+#endif // BLE_CONFIG_H
