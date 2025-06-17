@@ -1,6 +1,6 @@
-# Attendance IoT Project
+# Attendance Signing with ESP32
 
-This project uses PlatformIO for building and managing the embedded application.
+This attendance signing project uses PlatformIO for building and managing the embedded application.
 
 ## Prerequisites
 
