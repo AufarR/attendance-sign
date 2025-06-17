@@ -1,0 +1,47 @@
+#pragma once
+
+// RENAME TO key.h and use another key. This is just an example.
+// This file contains the public and private keys used for secure communication.
+
+const unsigned char private_key[] PROGMEM = R"=====(
+-----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDIIJdTfuep1O16
+ObuF7Y2vox70z748ZUYeFvDCzBkwpnmbvgrvNOkyhfIRy4d0IUcBk8liTAO1F4Qz
+3fk2q9L5JP29OgSJe4BPRWmchnUprE9AExT+fM9uJtbj2mEh1UzegcNtwxphYAkb
+lr7uiDyRe0MAdAPKp+dQ0etDfwJZiXEfj11YpJ3Ga0Q4SzOu729+kzbhVP7jgp3f
+yDcdass7Nk1eWX/l80SzxpJE9/b+bwHy2hR0/XB7IIrEytwUwQL4H2jIpZRwshuJ
+19mDIKeupJZs+Ha6bX3EuvaK+9BNw2hXYj4TL1zel4JF9cJRyREvJHoehdTaR4+3
+iSYJWqUHAgMBAAECggEAAyzJorMWGlm1twG/zVwwuIiPIo5eSTQBcgxtdJ/rTbis
+oAFox//1ZLVNaVejqakn79cw/lLXn/4kWbtqEnexRTZ/aZkPUF3yuQECE2x4qicy
+uR1X8N3cX30N69B8DztLri4DLTRyPsA8WE9tUeo8ZfqvP7cXeBXg1zOuQVKYysea
+mytCIPVCKGIy4yD7IQDVNzgS1sBmCHBpzMJPVC9LPj0B8Rj0qB+Qlp05GDekxZqx
+XlFPPN/Tibeeu4LBkjFP6VY/dLn1aCHZIFIS1LqVsLUNitUMLsTF17PHZh1dmOrT
+nTsDzSD9otkfAWGu98yzusGJ+x9WOSFyE56aHSaKEQKBgQD34L0F9r1P/RVdpTO2
+6+dHjDQu33Z4dRBPOR6sIAxAp+lSpqzPmnpJNFlk8nKGFANByW0w+Dl/+YCViFpy
+KoJDvQ+DKbGG2X/8Tab5J/JFudeq7AipQK7RD7sK827v/GR7bI3QZJ6nEODGODVT
+tM07jvyJkqZs7tJqv+xMGrTkEQKBgQDOr08Z87v+0w42Idz5XdTR71ho/hOR8q3/
+aG/87B4Mrku3tMlFBPVMbr5gzANUkRfIZNf0AdhQsvd12odRwc/QJ+LZRnVanw2X
+K8EjL1/2CkjpgenEPx1OFS/afgPfB+EZeA9H4RBrUh3axpo5F4upHHjKssB5mdJU
+Gi0emzkvlwKBgFT1BBRNMyl9Npt4CbeCNyzAkwoVsQcsKEDe9PJNsaVfZ4racZRd
+/9ejR5hfuHzX0x3zKaeFDEAehcG6kDVc+HS7EdwEqEHtvf39p2LyHAll3tNIPtez
+wbcJyzO/p6A9QztCQ4DPW8kq8b8+eJiN+WGWalvElaH0YM4Rpa2X4bPhAoGAJBTk
+uUIckqrjsz2MJxhjW9bt1z5ryjHUgF8KFdxejpYq78Im1N69t/8pSxqyhiPiRACe
+1qEv0z67Bp8EupgcIFmmN4oeWJiltbtUt0DA/uHiwqkEV1cxVX1LYlhXcqscd+bG
+vCSlSicGwTekmszqe7ZVvAUiptfcqQP81ngArrcCgYEAsNXJ4fqoWDJBNR9p0eY3
+jHM5LBgHvT78wBfvOQDjYbpVDcMOhG6o/cTZzTcLOsg0TdqwPgMIDLwzos3ZWqQN
+46eqAprGWkm1ShBqpNGgjZEJmaM7AYeX7dxbEJz0jMBC0dWP5f/QwrPBcHCrBRop
+B5N863jfbzPp7dpn/fpM0SI=
+-----END PRIVATE KEY-----
+)=====";
+
+const unsigned char public_key[] PROGMEM = R"=====(
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyCCXU37nqdTtejm7he2N
+r6Me9M++PGVGHhbwwswZMKZ5m74K7zTpMoXyEcuHdCFHAZPJYkwDtReEM935NqvS
++ST9vToEiXuAT0VpnIZ1KaxPQBMU/nzPbibW49phIdVM3oHDbcMaYWAJG5a+7og8
+kXtDAHQDyqfnUNHrQ38CWYlxH49dWKSdxmtEOEszru9vfpM24VT+44Kd38g3HWrL
+OzZNXll/5fNEs8aSRPf2/m8B8toUdP1weyCKxMrcFMEC+B9oyKWUcLIbidfZgyCn
+rqSWbPh2um19xLr2ivvQTcNoV2I+Ey9c3peCRfXCUckRLyR6HoXU2kePt4kmCVql
+BwIDAQAB
+-----END PUBLIC KEY-----
+)=====";

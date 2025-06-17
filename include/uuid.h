@@ -1,0 +1,13 @@
+#ifndef UUID_H
+#define UUID_H
+
+// Define your Service UUID
+#define SERVICE_UUID "C5B6A31F-4D2E-4F8C-80A0-9A7B6C5D4E3F"
+
+// Define your Message Characteristic UUID
+#define MESSAGE_CHARACTERISTIC_UUID "C5B6A31F-4D2E-4F8C-80A1-9A7B6C5D4E3F"
+
+// Define your Signature Characteristic UUID
+#define SIG_CHARACTERISTIC_UUID "C5B6A31F-4D2E-4F8C-80A2-9A7B6C5D4E3F"
+
+#endif // UUID_H
