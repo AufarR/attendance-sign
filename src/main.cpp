@@ -16,6 +16,11 @@
 
 BLECharacteristic *pSigCharacteristic;
 
+// Global variable to store the last interaction time
+unsigned long lastInteractionTime = 0;
+// Global variable to store the BLEServer pointer
+BLEServer* pServerInstance = nullptr;
+
 mbedtls_pk_context pk;
 mbedtls_ctr_drbg_context ctr_drbg;
 mbedtls_entropy_context entropy;
@@ -23,6 +28,7 @@ mbedtls_entropy_context entropy;
 class ServerCallbacks : public BLEServerCallbacks {
     void onConnect(BLEServer* pServer) {
         Serial.println("Client connected");
+        lastInteractionTime = millis(); // Reset timer on new connection
     }
 
     void onDisconnect(BLEServer* pServer) {
@@ -35,6 +41,7 @@ class ServerCallbacks : public BLEServerCallbacks {
 class MessageCallback : public BLECharacteristicCallbacks {
     void onWrite(BLECharacteristic *pCharacteristic) {
         std::string value = pCharacteristic->getValue();
+        lastInteractionTime = millis(); // Update interaction time on write
 
         if (value.length() > 0) {
             Serial.print("Received via BLE: ");
@@ -87,9 +94,9 @@ void setup() {
 
     // ===== BLE SETUP =====
     BLEDevice::init(BLE_DEVICE_NAME);
-    BLEServer *pServer = BLEDevice::createServer();
-    pServer->setCallbacks(new ServerCallbacks());
-    BLEService *pService = pServer->createService(SERVICE_UUID);
+    pServerInstance = BLEDevice::createServer(); // Assign to global pointer
+    pServerInstance->setCallbacks(new ServerCallbacks());
+    BLEService *pService = pServerInstance->createService(SERVICE_UUID);
 
     // Characteristic to receive the message
     BLECharacteristic *pMessageCharacteristic = pService->createCharacteristic(
@@ -111,4 +118,15 @@ void setup() {
     Serial.println("BLE ready");
 }
 
-void loop() {}
+void loop() {
+    // Check for inactivity and disconnect if timeout is reached
+    if (pServerInstance != nullptr && pServerInstance->getConnectedCount() > 0 && (millis() - lastInteractionTime > AUTO_DISCONNECT_TIMEOUT_MS)) {
+        Serial.println("Client inactive, disconnecting.");
+        std::vector<uint16_t> connIds = pServerInstance->getConnIdVec();
+        for (uint16_t connId : connIds) {
+            pServerInstance->disconnect(connId);
+        }
+        lastInteractionTime = millis(); // Reset timer after disconnect
+    }
+    delay(1000); // Check every second
+}
