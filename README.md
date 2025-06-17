@@ -1,6 +1,10 @@
 # Attendance Signing with ESP32
 
-This attendance signing project uses PlatformIO for building and managing the embedded application.
+Aufar Ramadhan 18221163
+
+## Notes
+
+This project is the BLE signing component of an attendance system and works in conjunction with the [aufarr/attendance-web](https://github.com/aufarr/attendance-web) repository, which is the web application. Please refer to that repository for the web application setup.
 
 ## Prerequisites
 
