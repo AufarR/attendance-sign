@@ -122,10 +122,8 @@ void loop() {
     // Check for inactivity and disconnect if timeout is reached
     if (pServerInstance != nullptr && pServerInstance->getConnectedCount() > 0 && (millis() - lastInteractionTime > AUTO_DISCONNECT_TIMEOUT_MS)) {
         Serial.println("Client inactive, disconnecting.");
-        std::vector<uint16_t> connIds = pServerInstance->getConnIdVec();
-        for (uint16_t connId : connIds) {
-            pServerInstance->disconnect(connId);
-        }
+        uint16_t connId = pServerInstance->getConnId();
+        pServerInstance->disconnect(connId);
         lastInteractionTime = millis(); // Reset timer after disconnect
     }
     delay(1000); // Check every second
