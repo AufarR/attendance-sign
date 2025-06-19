@@ -11,7 +11,6 @@
 #include "mbedtls/entropy.h"
 #include "mbedtls/base64.h"
 #include "key.h"
-#include "uuid.h"
 #include "ble_config.h"
 
 BLECharacteristic *pSigCharacteristic;
