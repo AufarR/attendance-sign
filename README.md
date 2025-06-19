@@ -14,25 +14,19 @@ This project is the BLE signing component of an attendance system and works in c
 ## Setup
 
 1.  **Configure BLE Settings (from examples)**:
-    *   **General BLE Configuration (`ble_config.h`)**:
-        *   This file is for settings like the BLE device name and auto-disconnect timeout.
-        *   First, copy the example configuration file:
+    *   **BLE Configuration (`ble_config.h`)**:
+        *   This file is for settings like the BLE device name, auto-disconnect timeout, and UUIDs for the BLE service and its characteristics.
+        *   First, copy the (first) example configuration file:
             ```bash
-            cp include/ble_config.h.example include/ble_config.h
+            cp include/ble_config.h.example1 include/ble_config.h
             ```
         *   Then, edit `include/ble_config.h`. For example, you can customize `BLE_DEVICE_NAME` and `AUTO_DISCONNECT_TIMEOUT_MS`.
-    *   **Service and Characteristic UUIDs (`uuid.h`)**:
-        *   This file defines the UUIDs for the BLE service and its characteristics.
-        *   First, copy the example UUID file:
-            ```bash
-            cp include/uuid.h.example include/uuid.h
-            ```
-        *   Then, edit `include/uuid.h` to set your desired `SERVICE_UUID`, `MESSAGE_CHARACTERISTIC_UUID`, and `SIG_CHARACTERISTIC_UUID`.
+        *   You can also set your desired `SERVICE_UUID`, `MESSAGE_CHARACTERISTIC_UUID`, and `SIG_CHARACTERISTIC_UUID` but please **keep service & characteristic UUIDs consistent between devices. Let device name be the differentiator for BLE discovery**
 
 2.  **Configure RSA Key**:
-    *   Copy the example key file:
+    *   Copy the (first) example key file:
         ```bash
-        cp include/key.h.example include/key.h
+        cp include/key.h.example1 include/key.h
         ```
     *   Edit `include/key.h` and replace the placeholder with your actual RSA key.
 

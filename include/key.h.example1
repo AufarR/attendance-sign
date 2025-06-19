@@ -1,7 +1,7 @@
 #pragma once
 
 // RENAME TO key.h and use another key. This is just an example.
-// This file contains the public and private keys used for secure communication.
+// This file contains the public and private keys used for authentication.
 
 const unsigned char private_key[] PROGMEM = R"=====(
 -----BEGIN PRIVATE KEY-----
